@@ -22,7 +22,7 @@ import android.util.Log;
  * @author sunfusheng on 2018/8/1.
  */
 public class DaemonService extends Service {
-    private static final String TAG = "---> DaemonService";
+    private static final String TAG = "DaemonService";
     private ScreenBroadcastReceiver screenBroadcastReceiver = new ScreenBroadcastReceiver();
 
     private final DaemonAidl aidl = new DaemonAidl.Stub() {

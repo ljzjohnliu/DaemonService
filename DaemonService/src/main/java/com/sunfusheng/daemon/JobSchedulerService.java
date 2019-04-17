@@ -15,7 +15,7 @@ import android.util.Log;
  */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class JobSchedulerService extends JobService {
-    private static final String TAG = "---> JobService";
+    private static final String TAG = "JobService";
     private static final int JOB_ID = 10000;
 
     public static void scheduleJobService(Context context) {

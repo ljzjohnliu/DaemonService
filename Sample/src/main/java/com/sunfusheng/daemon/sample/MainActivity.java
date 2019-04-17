@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.sunfusheng.daemon.DaemonHolder;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
     private TextView vText;
 
     @Override

@@ -16,7 +16,7 @@ import android.util.Log;
  * @author sunfusheng on 2018/8/1.
  */
 public class DaemonHolder {
-    private static final String TAG = "---> DaemonHolder";
+    private static final String TAG = "DaemonHolder";
     @SuppressLint("StaticFieldLeak")
     static Context mContext;
     static Class<? extends Service> mService;
