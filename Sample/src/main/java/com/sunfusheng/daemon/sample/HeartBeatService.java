@@ -9,7 +9,7 @@ import com.sunfusheng.daemon.AbsHeartBeatService;
  * @author sunfusheng on 2018/8/3.
  */
 public class HeartBeatService extends AbsHeartBeatService {
-    private static final String TAG = "---> HeartBeatService";
+    private static final String TAG = "HeartBeatService";
     private static final android.os.Handler mainThreadHandler = new android.os.Handler(Looper.getMainLooper());
 
     @Override
@@ -24,16 +24,18 @@ public class HeartBeatService extends AbsHeartBeatService {
 
     @Override
     public long getDelayExecutedMillis() {
+        Log.d(TAG, "getDelayExecutedMillis: ");
         return 0;
     }
 
     @Override
     public long getHeartBeatMillis() {
+        Log.d(TAG, "getHeartBeatMillis: ");
         return 30 * 1000;
     }
 
     @Override
     public void onHeartBeat() {
-        Log.d(TAG, "onHeartBeat()");
+        Log.d(TAG, "onHeartBeat()  pid = " + android.os.Process.myPid());
     }
 }

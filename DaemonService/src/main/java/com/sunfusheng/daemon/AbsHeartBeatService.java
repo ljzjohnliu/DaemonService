@@ -19,7 +19,7 @@ import java.util.TimerTask;
  * @author sunfusheng on 2018/8/1.
  */
 public abstract class AbsHeartBeatService extends Service {
-    private static final String TAG = "---> HeartBeatService";
+    private static final String TAG = "AbsHeartBeatService";
 
     private Timer timer = new Timer();
     private TimerTask timerTask = new TimerTask() {
@@ -33,11 +33,13 @@ public abstract class AbsHeartBeatService extends Service {
         @Override
         public void startService() throws RemoteException {
             Log.d(TAG, "aidl startService()");
+            startBindService();
         }
 
         @Override
         public void stopService() throws RemoteException {
             Log.e(TAG, "aidl stopService()");
+            startBindService();
         }
     };
 
@@ -77,6 +79,7 @@ public abstract class AbsHeartBeatService extends Service {
     };
 
     private void startBindService() {
+        Log.d(TAG, "startBindService: !!!");
         try {
             startService(new Intent(this, DaemonService.class));
             bindService(new Intent(this, DaemonService.class), serviceConnection, Context.BIND_IMPORTANT);

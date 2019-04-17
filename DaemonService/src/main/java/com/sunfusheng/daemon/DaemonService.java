@@ -22,7 +22,7 @@ import android.util.Log;
  * @author sunfusheng on 2018/8/1.
  */
 public class DaemonService extends Service {
-    private static final String TAG = "---> DaemonService";
+    private static final String TAG = "DaemonService";
     private ScreenBroadcastReceiver screenBroadcastReceiver = new ScreenBroadcastReceiver();
 
     private final DaemonAidl aidl = new DaemonAidl.Stub() {
@@ -60,9 +60,17 @@ public class DaemonService extends Service {
         public void onServiceDisconnected(ComponentName name) {
             Log.e(TAG, "onServiceDisconnected() 已解绑");
             try {
+                Log.e(TAG, "onServiceDisconnected() stopService ");
                 aidl.stopService();
             } catch (RemoteException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    Log.e(TAG, "onServiceDisconnected() startService");
+                    aidl.startService();
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
             }
         }
 

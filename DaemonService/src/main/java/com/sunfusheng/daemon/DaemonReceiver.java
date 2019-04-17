@@ -9,7 +9,7 @@ import android.util.Log;
  * @author sunfusheng on 2018/8/3.
  */
 public class DaemonReceiver extends BroadcastReceiver {
-    private static final String TAG = "---> DaemonReceiver";
+    private static final String TAG = "DaemonReceiver";
 
     @Override
     public void onReceive(Context context, Intent intent) {

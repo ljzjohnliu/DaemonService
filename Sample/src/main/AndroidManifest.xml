@@ -20,6 +20,11 @@
 
         <service android:name=".HeartBeatService"/>
 
+        <receiver android:name=".MyReceiver">
+            <intent-filter>
+                <action android:name="com.study.test" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
